@@ -8,9 +8,7 @@
 goodyeah/
 ├── drugs.db                    # SQLite 数据库，包含 4750 条医保药品数据
 ├── 4750.json                  # 原始 API 响应数据
-├── import_to_sqlite.py         # 将 JSON 导入数据库脚本
-├── getlist.py                 # 请求医保药品列表 API 脚本
-├── main.py                    # 项目入口
+├── main.py                    # CLI 入口（fetch/import/update）
 ├── pyproject.toml             # Python 依赖配置
 ├── 药品目录凡例.md            # 《药品目录》凡例（政策说明文档）
 ├── .claude/
@@ -34,16 +32,15 @@ source .venv/bin/activate
 
 ### 数据更新
 
-从医保局 API 获取最新药品数据：
-
 ```bash
-uv run python getlist.py
-```
+# 一键更新（获取 API 数据并导入数据库）
+uv run python main.py update
 
-将 JSON 数据导入 SQLite：
+# 仅从 API 获取数据
+uv run python main.py fetch
 
-```bash
-uv run python import_to_sqlite.py
+# 仅将 JSON 导入数据库
+uv run python main.py import
 ```
 
 ### 查询药品
