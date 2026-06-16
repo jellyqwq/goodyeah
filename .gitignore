@@ -1,4 +1,4 @@
-# Python-generated files
+# Python generated files
 __pycache__/
 *.py[oc]
 build/
@@ -8,3 +8,17 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Database files
+*.db
+
+# JSON data files
+*.json
+
+# Checkpoint files
+.fetch_checkpoint*
+.detail_checkpoint*
+.captcha.png
+
+# uv lock (optional, keep if you want reproducible builds)
+# uv.lock
